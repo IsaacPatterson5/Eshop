@@ -10,7 +10,7 @@ namespace API.Data
         {
             if (context.Products.Any()) return;
 
-            var Products = new List<Product>
+            var products = new List<Product>
             {
                 new Product
                 {
@@ -210,9 +210,9 @@ namespace API.Data
                 },
             };
 
-            foreach (var Product in Products)
+            foreach (var product in products)
             {
-               context.Products.Add(Product); 
+                context.Products.Add(product);
             }
 
             context.SaveChanges();
