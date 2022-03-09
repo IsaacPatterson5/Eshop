@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Eshop\\API\\API.csproj": {}
+    "/Users/IsaacPattersonHgs/Eshop/Eshop/API/API.csproj": {}
   },
   "projects": {
-    "C:\\Eshop\\API\\API.csproj": {
+    "/Users/IsaacPattersonHgs/Eshop/Eshop/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Eshop\\API\\API.csproj",
+        "projectUniqueName": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Eshop\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\Hidden Genius\\.nuget\\packages\\",
-        "outputPath": "C:\\Eshop\\API\\obj\\",
+        "projectPath": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/API.csproj",
+        "packagesPath": "/Users/IsaacPattersonHgs/.nuget/packages/",
+        "outputPath": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hidden Genius\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/IsaacPattersonHgs/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }
