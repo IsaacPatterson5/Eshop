@@ -455,3 +455,5 @@ $RECYCLE.BIN/
 
 # General Files
 API/appsettings.json
+API/store.db-sch
+API/store.db-wal
