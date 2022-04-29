@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <h1 >Eshop</h1>
+      <h1>Eshop</h1>
       <ul>
         {products.map((item, index) =>(
           <li key={index}>{item.name} - {item.price}</li>
