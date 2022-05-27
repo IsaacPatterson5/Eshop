@@ -7,6 +7,9 @@ namespace API
     {
         public static void Main(string[] args)
         {
+            
+            
+            
             var host = CreateHostBuilder(args).Build();
             var scope = host.Services.CreateScope();
             var context = scope.ServiceProvider.GetRequiredService<StoreContext>();
@@ -20,6 +23,7 @@ namespace API
             {
                 logger.LogError(ex, "Problem migrating data");
             }
+            
 
             host.Run();
         }   
