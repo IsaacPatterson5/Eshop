@@ -10,19 +10,19 @@ namespace API.Controllers
            return NotFound();
        }
 
-       [HttpGet("not-found")]
+       [HttpGet("bad-request")]
        public ActionResult GetBadRequest()
        {
-           return BadRequest("This is a bad request");
+           return BadRequest(new ProblemDetails{Title = "This is a bad request"});
        }
 
-       [HttpGet("not-found")]
+       [HttpGet("unauthorized")]
        public ActionResult GetUnauthorized()
        {
            return Unauthorized();
        }
 
-       [HttpGet("not-found")]
+       [HttpGet("validation-error")]
        public ActionResult GetValidationError()
        {
            ModelState.AddModelError("Problem1", "This is the first error");
@@ -30,7 +30,7 @@ namespace API.Controllers
            return ValidationProblem();
        }
 
-       [HttpGet("not-found")]
+       [HttpGet("server-error")]
        public ActionResult GetServerError()
        {
            throw new Exception("This is a server error");
