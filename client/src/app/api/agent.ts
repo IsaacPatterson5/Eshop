@@ -2,6 +2,8 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import { history } from "../..";
 
+const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
+
 axios.defaults.baseURL = 'http://localhost:5000/api/';
 
 interface ResponseData {
@@ -9,18 +11,18 @@ interface ResponseData {
       errors: any;
       title: string;
       status: number;
+      response: any;
     };
     status: number;
   }
 
 const responseBody = (response: AxiosResponse) => response.data;
 
-axios.interceptors.response.use(
-    (response) => {
-      return response;
-    },
-    (error: AxiosError) => {
-      const { data, status } = <ResponseData>error.response;
+axios.interceptors.response.use(async response => {
+  await sleep();
+  return response;
+}, (error: AxiosError) => {
+  const { data, status } = <ResponseData>error.response;
       switch (status) {
         case 400:
             if (data.errors) {
