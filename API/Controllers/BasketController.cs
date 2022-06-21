@@ -37,6 +37,7 @@ namespace API.Controllers
             if (basket == null) basket = CreateBasket();
 
             var product = await Context.Products.FindAsync(productId);
+            
             if (product == null) return NotFound();
 
             basket.AddItem(product, quantity);
@@ -44,7 +45,7 @@ namespace API.Controllers
             var result = await Context.SaveChangesAsync() > 0;
 
             if (result) return StatusCode(201);
-            
+
             return BadRequest(new ProblemDetails{Title = "Problem saving item to basket"});
         }
 
