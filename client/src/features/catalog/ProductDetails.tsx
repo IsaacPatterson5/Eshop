@@ -108,6 +108,6 @@ export default function ProductDetails () {
                     </Grid>
                 </Grid>
             </Grid>
-        </Grid>
+        </Grid> 
     )
 }
