@@ -1,12 +1,11 @@
-import { Grid, Pagination, Paper, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Grid, Paper } from "@mui/material";
 import { useEffect } from "react";
 import AppPagination from "../../app/components/AppPagination";
 import CheckboxButtons from "../../app/components/CheckboxButtons";
 import RadioButtonGroup from "../../app/components/RadioButtonGroup";
 import LoadingComponent from "../../app/layout/LoadingComponent";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
-import { fetchFilters, fetchProductsAsync, productSelectors, setProductParams } from "./CatalogSlice";
+import { fetchFilters, fetchProductsAsync, productSelectors, setPageNumber, setProductParams } from "./CatalogSlice";
 import ProductList from "./ProductList";
 import ProductSearch from "./ProductSearch";
 
@@ -32,7 +31,7 @@ export default function Catalog() {
   if (status.includes('pending') || !metaData) return <LoadingComponent message='Loading Products...'/>
 
     return( 
-        <Grid container spacing={4}>
+        <Grid container  columnSpacing={4}>
           <Grid item xs={3}>
             <Paper sx={{mb: 2}}>
               <ProductSearch />
@@ -65,10 +64,10 @@ export default function Catalog() {
           <ProductList products={products}/>
           </Grid>
           <Grid item xs={3}/>
-          <Grid item xs={9}>
+          <Grid item xs={9} sx={{mb:2}}>
             <AppPagination 
             metaData={metaData}
-            onPageChange={(page: number) => dispatch(setProductParams({pageNumber: page}))}
+            onPageChange={(page: number) => dispatch(setPageNumber({pageNumber: page}))}
             />
           </Grid>
       </Grid>
