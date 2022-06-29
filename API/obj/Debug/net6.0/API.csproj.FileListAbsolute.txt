@@ -131,3 +131,16 @@ C:/Eshop/API/bin/Debug/net6.0/runtimes/win-x86/native/e_sqlite3.dll
 /Users/IsaacPattersonHgs/Eshop/Eshop/API/obj/Debug/net6.0/API.pdb
 /Users/IsaacPattersonHgs/Eshop/Eshop/API/obj/Debug/net6.0/API.genruntimeconfig.cache
 /Users/IsaacPattersonHgs/Eshop/Eshop/API/obj/Debug/net6.0/ref/API.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/Users/IsaacPattersonHgs/Eshop/Eshop/API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
