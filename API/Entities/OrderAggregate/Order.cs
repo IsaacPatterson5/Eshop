@@ -16,7 +16,7 @@ namespace API.Entities.OrderAggregate
         public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
         
         public long GetTotal()
-        {
+        { 
             return Subtotal + DeliveryFee;
         }
     }
