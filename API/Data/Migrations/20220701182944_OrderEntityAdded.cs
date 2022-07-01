@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace API.Data.Migrations
 {
     public partial class OrderEntityAdded : Migration
@@ -254,8 +256,7 @@ namespace API.Data.Migrations
                         name: "FK_OrderItem_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -288,12 +289,12 @@ namespace API.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 1, "ee33a03a-33f1-4803-a64a-4ab20c7ffd6a", "Member", "MEMBER" });
+                values: new object[] { 1, "a0aa6d4b-13e4-46d7-b982-906f29a65919", "Member", "MEMBER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 2, "988cee4e-cdf3-4ec6-8f5e-c9923e89c160", "Admin", "ADMIN" });
+                values: new object[] { 2, "388cc181-8033-4cbb-9c7d-2fefc7b143d9", "Admin", "ADMIN" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

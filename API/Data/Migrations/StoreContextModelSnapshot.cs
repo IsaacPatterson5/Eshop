@@ -52,7 +52,7 @@ namespace API.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("BasketItem");
+                    b.ToTable("BasketItems");
                 });
 
             modelBuilder.Entity("API.Entities.OrderAggregate.Order", b =>
@@ -60,6 +60,9 @@ namespace API.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("BuyerId")
+                        .HasColumnType("TEXT");
 
                     b.Property<long>("DeliveryFee")
                         .HasColumnType("INTEGER");
@@ -162,14 +165,14 @@ namespace API.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "fc5b2bec-3fbd-461c-965a-b5e5c31738ff",
+                            ConcurrencyStamp = "a0aa6d4b-13e4-46d7-b982-906f29a65919",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "b63e3b38-a94a-44b0-bdf0-8b9ec528ed30",
+                            ConcurrencyStamp = "388cc181-8033-4cbb-9c7d-2fefc7b143d9",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
