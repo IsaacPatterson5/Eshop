@@ -1,4 +1,4 @@
-import { LoadingButton } from "@material-ui/lab";
+import { LoadingButton } from "@mui/lab";
 import {
   Avatar,
   Button,
