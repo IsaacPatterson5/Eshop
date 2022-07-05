@@ -10,7 +10,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import agent from '../../app/api/agent';
 import { toast } from 'react-toastify';
-import { LoadingButton } from '@material-ui/lab';
+import { LoadingButton } from '@mui/lab';
 
 export default function Register() {
     const history = useHistory();

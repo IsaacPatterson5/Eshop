@@ -8,9 +8,9 @@ import Container from '@mui/material/Container';
 import { Paper } from '@mui/material';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { FieldValues, useForm } from 'react-hook-form';
-import { LoadingButton } from '@material-ui/lab';
 import { useAppDispatch } from '../../app/store/configureStore';
 import { signInUser } from './accountSlice';
+import { LoadingButton } from '@mui/lab';
 
 export default function Login() {
   const history = useHistory();
