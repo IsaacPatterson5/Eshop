@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
+import { request } from "http";
 import { toast } from "react-toastify";
 import { history } from "../..";
 import { PaginatedResponse } from "../models/pagination";
@@ -68,43 +69,51 @@ axios.interceptors.response.use(async response => {
 })
 
 const requests = {
-    get: (url: string, params?: URLSearchParams) => axios.get(url, {params}).then(responseBody),
-    post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
-    put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
-    delete: (url: string) => axios.delete(url).then(responseBody),
+  get: (url: string, params?: URLSearchParams) => axios.get(url, {params}).then(responseBody),
+  post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
+  put: (url: string, body: {}) => axios.put(url, body).then(responseBody),
+  delete: (url: string) => axios.delete(url).then(responseBody),
 }
 
 const Catalog = {
-    list: (params: URLSearchParams) => requests.get('products', params),
-    details: (id: number) => requests.get(`products/${id}`),
-    fetchFilters: () => requests.get('products/filters')
+  list: (params: URLSearchParams) => requests.get('products', params),
+  details: (id: number) => requests.get(`products/${id}`),
+  fetchFilters: () => requests.get('products/filters')
 }
 
-const Testerrors = {
-    get400Error: () => requests.get('buggy/bad-request'),
-    get401Error: () => requests.get('buggy/unauthorized'),
-    get404Error: () => requests.get('buggy/not-found'),
-    get500Error: () => requests.get('buggy/server-error'),
-    getValidationError: () => requests.get('buggy/validation-error'),
+const TestErrors = {
+  get400Error: () => requests.get('buggy/bad-request'),
+  get401Error: () => requests.get('buggy/unauthorised'),
+  get404Error: () => requests.get('buggy/not-found'),
+  get500Error: () => requests.get('buggy/server-error'),
+  getValidationError: () => requests.get('buggy/validation-error'),
 }
 
 const Basket = {
   get: () => requests.get('basket'),
   addItem: (productId: number, quantity = 1) => requests.post(`basket?productId=${productId}&quantity=${quantity}`, {}),
-  removeItem: (productId: number, quantity = 1) => requests.delete(`basket?productId=${productId}&quantity=${quantity}`,),
+  removeItem: (productId: number, quantity = 1) => requests.delete(`basket?productId=${productId}&quantity=${quantity}`)
 }
 
 const Account = {
   login: (values: any) => requests.post('account/login', values),
   register: (values: any) => requests.post('account/register', values),
   currentUser: () => requests.get('account/currentUser'),
+  fetchAddress: () => requests.get('account/savedAddress')
+}
+
+const Orders = {
+  list: () => requests.get('orders'),
+  fetch: (id: number) => requests.get(`orders/${id}`),
+  create: (values: any) => requests.post('orders', values)
 }
 
 const agent = {
-    Catalog,
-    Testerrors,
-    Basket,
-    Account
+  Catalog,
+  TestErrors,
+  Basket,
+  Account,
+  Orders
 }
 
 export default agent;
