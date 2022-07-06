@@ -66,8 +66,8 @@ export default function PaymentForm({cardState, onCardInputChange}: Props) {
             onChange={onCardInputChange}
             error={!!cardState.elementError.cardCvc}
             helperText={cardState.elementError.cardCvc}
-            id="cvv"
-            label="CVV"
+            id="cvc"
+            label="CVC"
             fullWidth
             autoComplete="cc-csc"
             variant="outlined"
