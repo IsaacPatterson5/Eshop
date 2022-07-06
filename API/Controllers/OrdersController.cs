@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,19 +13,19 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     [Authorize]
-    public class OrdersController: BaseApiController
+    public class OrdersController : BaseApiController
     {
         private readonly StoreContext _context;
         public OrdersController(StoreContext context)
         {
             _context = context;
-            
+
         }
 
         [HttpGet]
         public async Task<ActionResult<List<OrderDto>>> GetOrders()
         {
-            return await _context.Orders
+             return await _context.Orders
                 .ProjectOrderToOrderDto()
                 .Where(x => x.BuyerId == User.Identity.Name)
                 .ToListAsync();
@@ -34,12 +33,13 @@ namespace API.Controllers
 
         [HttpGet("{id}", Name = "GetOrder")]
         public async Task<ActionResult<OrderDto>> GetOrder(int id)
-        { 
+        {
             return await _context.Orders
                 .ProjectOrderToOrderDto()
                 .Where(x => x.BuyerId == User.Identity.Name && x.Id == id)
                 .FirstOrDefaultAsync();
         }
+
         [HttpPost]
         public async Task<ActionResult<int>> CreateOrder(CreateOrderDto orderDto)
         {
@@ -47,12 +47,12 @@ namespace API.Controllers
                 .RetrieveBasketWithItems(User.Identity.Name)
                 .FirstOrDefaultAsync();
 
-             if (basket == null) return BadRequest(new ProblemDetails{Title = "Could not locate basket"});
+            if (basket == null) return BadRequest(new ProblemDetails{Title = "Could not locate basket"});
 
-             var items = new List<OrderItem>();
+            var items = new List<OrderItem>();
 
-             foreach (var item in basket.Items)
-             {
+            foreach (var item in basket.Items)
+            {
                 var productItem = await _context.Products.FindAsync(item.ProductId);
                 var itemOrdered = new ProductItemOrdered
                 {
@@ -60,6 +60,7 @@ namespace API.Controllers
                     Name = productItem.Name,
                     PictureUrl = productItem.PictureUrl
                 };
+
                 var orderItem = new OrderItem
                 {
                     ItemOrdered = itemOrdered,
@@ -68,27 +69,31 @@ namespace API.Controllers
                 };
                 items.Add(orderItem);
                 productItem.QuantityInStock -= item.Quantity;
-             }
+            }
 
-             var Subtotal = items.Sum(item => item.Price * item.Quantity);
-             var DeliveryFee = Subtotal > 10000 ? 0 : 500;
+            var subtotal = items.Sum(item => item.Price * item.Quantity);
+            var deliveryFee = subtotal > 10000 ? 0 : 500;
 
-             var order = new Order
-             {
+            var order = new Order
+            {
                 OrderItems = items,
                 BuyerId = User.Identity.Name,
                 ShippingAddress = orderDto.ShippingAddress,
-                Subtotal = Subtotal,
-                DeliveryFee = DeliveryFee
-             };
+                Subtotal = subtotal,
+                DeliveryFee = deliveryFee,
+                PaymentIntentId = basket.PaymentIntentId
+            };
 
-             _context.Orders.Add(order);
-             _context.Baskets.Remove(basket);
+            _context.Orders.Add(order);
+            _context.Baskets.Remove(basket);
 
-             if (orderDto.SaveAddress)
-             {
-                var user = await _context.Users.FirstOrDefaultAsync(x => x.UserName == User.Identity.Name);
-                user.Address = new UserAddress
+            if (orderDto.SaveAddress)
+            {
+                var user = await _context.Users
+                    .Include(a => a.Address)
+                    .FirstOrDefaultAsync(x => x.UserName == User.Identity.Name);
+
+                var address = new UserAddress
                 {
                     FullName = orderDto.ShippingAddress.FullName,
                     Address1 = orderDto.ShippingAddress.Address1,
@@ -96,15 +101,16 @@ namespace API.Controllers
                     City = orderDto.ShippingAddress.City,
                     State = orderDto.ShippingAddress.State,
                     Zip = orderDto.ShippingAddress.Zip,
-                    Country = orderDto.ShippingAddress.Country,
+                    Country = orderDto.ShippingAddress.Country
                 };
-                _context.Update(user);
-             }
-             var result = await _context.SaveChangesAsync() > 0;
+                user.Address = address;
+            }
 
-             if (result) return CreatedAtRoute("GetOrder", new {id = order.Id}, order.Id);
+            var result = await _context.SaveChangesAsync() > 0;
 
-             return BadRequest("Problem creating order");
+            if (result) return CreatedAtRoute("GetOrder", new {id = order.Id}, order.Id);
+
+            return BadRequest(new ProblemDetails{Title = "Problem creating order"});
         }
     }
 }

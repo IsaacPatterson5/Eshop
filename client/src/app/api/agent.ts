@@ -1,5 +1,4 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { request } from "http";
 import { toast } from "react-toastify";
 import { history } from "../..";
 import { PaginatedResponse } from "../models/pagination";
@@ -9,7 +8,6 @@ const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 
 axios.defaults.baseURL = 'http://localhost:5000/api/';
 axios.defaults.withCredentials = true;
-
 
 interface ResponseData {
     data: {
@@ -108,12 +106,17 @@ const Orders = {
   create: (values: any) => requests.post('orders', values)
 }
 
+const Payments = {
+  createPaymentIntent: () => requests.post('payments', {})
+}
+
 const agent = {
   Catalog,
   TestErrors,
   Basket,
   Account,
-  Orders
+  Orders,
+  Payments
 }
 
 export default agent;

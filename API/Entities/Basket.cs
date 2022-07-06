@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http.Features;
 
 namespace API.Entities
 {
@@ -10,10 +7,10 @@ namespace API.Entities
     {
         public int Id { get; set; }
         public string BuyerId { get; set; }
-        
         public List<Basketitem> Items { get; set; } = new();
         public string PaymentIntentId { get; set; }
         public string ClientSecret { get; set; }
+
         public void AddItem(Product product, int quantity)
         {
             if (Items.All(item => item.ProductId != product.Id))
@@ -25,9 +22,9 @@ namespace API.Entities
             if (existingItem != null) existingItem.Quantity += quantity;
         }
 
-        public void RemoveItem(int ProductId, int quantity)
+        public void RemoveItem(int productId, int quantity)
         {
-            var item = Items.FirstOrDefault(item => item.ProductId == ProductId);
+            var item = Items.FirstOrDefault(item => item.ProductId == productId);
             if (item == null) return;
             item.Quantity -= quantity;
             if (item.Quantity == 0) Items.Remove(item);
