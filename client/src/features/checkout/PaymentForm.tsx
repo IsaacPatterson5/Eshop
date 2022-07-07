@@ -69,7 +69,7 @@ export default function PaymentForm({cardState, onCardInputChange}: Props) {
             id="cvc"
             label="CVC"
             fullWidth
-            autoComplete="cc-csc"
+            autoComplete="cc-cvc"
             variant="outlined"
             InputLabelProps={{ shrink: true }}
             InputProps={{
