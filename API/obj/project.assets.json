@@ -2332,7 +2332,10 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.1",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.1",
+<<<<<<< HEAD
       "Npgsql >= 6.0.5",
+=======
+>>>>>>> origin/main
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.5",
       "Stripe.net >= 39.121.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -2393,10 +2396,13 @@
             "target": "Package",
             "version": "[6.0.1, )"
           },
+<<<<<<< HEAD
           "Npgsql": {
             "target": "Package",
             "version": "[6.0.5, )"
           },
+=======
+>>>>>>> origin/main
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[6.0.5, )"
@@ -2431,13 +2437,5 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/IsaacPattersonHgs/Eshop/Eshop/API/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

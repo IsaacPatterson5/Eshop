@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "dqP6DTdKsiDTVUYTtNQhM1yoMjd8QCOt16yt180/mM7PRZ/g275rKZ+BoNyxdij2pVBiGIyRtybQWfXKZxXYgw==",
+=======
+  "dgSpecHash": "JQw/diiiE/lS/4BkW4KPFTP8GAS/yc0jqAJhRi1zygUs8izB0T5iIYvox8AFZnQNnw+yneQNxPZVVGLreixciQ==",
+>>>>>>> origin/main
   "success": true,
   "projectFilePath": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/API.csproj",
   "expectedPackageFiles": [
@@ -66,12 +70,5 @@
     "/Users/IsaacPattersonHgs/.nuget/packages/system.text.json/6.0.0/system.text.json.6.0.0.nupkg.sha512",
     "/Users/IsaacPattersonHgs/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/IsaacPattersonHgs/Eshop/Eshop/API/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
