@@ -12,7 +12,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.6",
           "Microsoft.EntityFrameworkCore.Design": "6.0.1",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.1",
+<<<<<<< HEAD
           "Npgsql": "6.0.5",
+=======
+>>>>>>> origin/main
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.5",
           "Stripe.net": "39.121.0",
           "Swashbuckle.AspNetCore": "6.2.3"

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "dqP6DTdKsiDTVUYTtNQhM1yoMjd8QCOt16yt180/mM7PRZ/g275rKZ+BoNyxdij2pVBiGIyRtybQWfXKZxXYgw==",
+=======
+  "dgSpecHash": "JQw/diiiE/lS/4BkW4KPFTP8GAS/yc0jqAJhRi1zygUs8izB0T5iIYvox8AFZnQNnw+yneQNxPZVVGLreixciQ==",
+>>>>>>> origin/main
   "success": true,
   "projectFilePath": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/API.csproj",
   "expectedPackageFiles": [

@@ -56,10 +56,13 @@
               "target": "Package",
               "version": "[6.0.1, )"
             },
+<<<<<<< HEAD
             "Npgsql": {
               "target": "Package",
               "version": "[6.0.5, )"
             },
+=======
+>>>>>>> origin/main
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[6.0.5, )"
