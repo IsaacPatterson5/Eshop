@@ -12,11 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-<<<<<<<< HEAD:API/Data/Migrations/20220708185407_PostGresInitial.Designer.cs
     [Migration("20220708185407_PostGresInitial")]
-========
-    [Migration("20220707212417_PostGresInitial")]
->>>>>>>> origin/main:API/Data/Migrations/20220707212417_PostGresInitial.Designer.cs
     partial class PostGresInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -97,10 +93,7 @@ namespace API.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("PaymentIntentId")
-<<<<<<<< HEAD:API/Data/Migrations/20220708185407_PostGresInitial.Designer.cs
                         .IsRequired()
-========
->>>>>>>> origin/main:API/Data/Migrations/20220707212417_PostGresInitial.Designer.cs
                         .HasColumnType("text");
 
                     b.Property<long>("Subtotal")
@@ -201,22 +194,14 @@ namespace API.Data.Migrations
                         new
                         {
                             Id = 1,
-<<<<<<<< HEAD:API/Data/Migrations/20220708185407_PostGresInitial.Designer.cs
                             ConcurrencyStamp = "83edc5a6-91b2-4c87-ab1e-99cedb8cce88",
-========
-                            ConcurrencyStamp = "5ae5dd75-5e83-4ded-ae06-5bc5e2021eb3",
->>>>>>>> origin/main:API/Data/Migrations/20220707212417_PostGresInitial.Designer.cs
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = 2,
-<<<<<<<< HEAD:API/Data/Migrations/20220708185407_PostGresInitial.Designer.cs
                             ConcurrencyStamp = "f30b4b34-8482-4dd7-8f82-a4ad5ae6af58",
-========
-                            ConcurrencyStamp = "deb9394a-ab11-4f55-91a4-fa1bc759b028",
->>>>>>>> origin/main:API/Data/Migrations/20220707212417_PostGresInitial.Designer.cs
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

@@ -91,10 +91,7 @@ namespace API.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("PaymentIntentId")
-<<<<<<< HEAD
                         .IsRequired()
-=======
->>>>>>> origin/main
                         .HasColumnType("text");
 
                     b.Property<long>("Subtotal")
@@ -195,22 +192,14 @@ namespace API.Data.Migrations
                         new
                         {
                             Id = 1,
-<<<<<<< HEAD
                             ConcurrencyStamp = "83edc5a6-91b2-4c87-ab1e-99cedb8cce88",
-=======
-                            ConcurrencyStamp = "5ae5dd75-5e83-4ded-ae06-5bc5e2021eb3",
->>>>>>> origin/main
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = 2,
-<<<<<<< HEAD
                             ConcurrencyStamp = "f30b4b34-8482-4dd7-8f82-a4ad5ae6af58",
-=======
-                            ConcurrencyStamp = "deb9394a-ab11-4f55-91a4-fa1bc759b028",
->>>>>>> origin/main
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

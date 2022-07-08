@@ -84,11 +84,7 @@ namespace API.Data.Migrations
                     Subtotal = table.Column<long>(type: "bigint", nullable: false),
                     DeliveryFee = table.Column<long>(type: "bigint", nullable: false),
                     OrderStatus = table.Column<int>(type: "integer", nullable: false),
-<<<<<<<< HEAD:API/Data/Migrations/20220708185407_PostGresInitial.cs
                     PaymentIntentId = table.Column<string>(type: "text", nullable: false)
-========
-                    PaymentIntentId = table.Column<string>(type: "text", nullable: true)
->>>>>>>> origin/main:API/Data/Migrations/20220707212417_PostGresInitial.cs
                 },
                 constraints: table =>
                 {
@@ -299,13 +295,8 @@ namespace API.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:API/Data/Migrations/20220708185407_PostGresInitial.cs
                     { 1, "83edc5a6-91b2-4c87-ab1e-99cedb8cce88", "Member", "MEMBER" },
                     { 2, "f30b4b34-8482-4dd7-8f82-a4ad5ae6af58", "Admin", "ADMIN" }
-========
-                    { 1, "5ae5dd75-5e83-4ded-ae06-5bc5e2021eb3", "Member", "MEMBER" },
-                    { 2, "deb9394a-ab11-4f55-91a4-fa1bc759b028", "Admin", "ADMIN" }
->>>>>>>> origin/main:API/Data/Migrations/20220707212417_PostGresInitial.cs
                 });
 
             migrationBuilder.CreateIndex(
