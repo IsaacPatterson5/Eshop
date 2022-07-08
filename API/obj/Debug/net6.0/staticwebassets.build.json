@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+J8Jo9iTQwsFk1fPTjzn7+oR2HmQ5Jose63i9qAw74U=",
+  "Hash": "JzJaih2zpUAF1MrMSiE1AnnkxyuHt50SP57CP//WVhU=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/wwwroot/.DS_Store",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/wwwroot/",
+      "BasePath": "_content/API",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
     {
       "Identity": "/Users/IsaacPattersonHgs/Eshop/Eshop/API/wwwroot/asset-manifest.json",
       "SourceId": "API",
